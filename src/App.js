@@ -32,7 +32,7 @@ function App() {
         )}>
         </Route>
         <Route exact path="/products/:id " component={Product}></Route>
-        <Route exact path="/productos/editar/:id" component={EditProduct}></Route>
+        <Route exact path="/products/edit/:id" component={EditProduct}></Route>
       </Switch>
       <p className="mt-4 p2 text-center">All rigths reserved</p>
     </Router>

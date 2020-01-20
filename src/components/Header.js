@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 const Header = () => (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
-            <Link to="/productos" className="navbar-brand">
+            <Link to="/products" className="navbar-brand">
                 React CRUD & Routing
             </Link>
             <ul className="navbar-nav mr-auto">
