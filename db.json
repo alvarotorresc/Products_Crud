@@ -1,0 +1,16 @@
+{
+    "restaurant" : [
+        {
+            "platePrice": "200",
+            "plateName": "Cheesecake",
+            "category": "Dessert",
+            "id": 1
+        },
+        {
+            "platePrice": "500",
+            "plateName": "Rib eye 400g",
+            "category": "Sandwich",
+            "id": 2
+        }
+    ]
+}
