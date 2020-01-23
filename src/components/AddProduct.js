@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import Error from './Error';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import { withRouter } from 'react-router-dom'
 
 
-const AddProduct = () => {
+const AddProduct = ({ history, setrechargeProducts }) => {
 
     const [plateName, setplateName] = useState('');
     const [platePrice, setplatePrice] = useState('');
@@ -12,12 +16,40 @@ const AddProduct = () => {
         setcategory(e.target.value);
     }
 
-    const addProducts = (e) => {
+    const addProducts = async (e) => {
         e.preventDefault();
 
         if (plateName === '' || platePrice === '' || category === '') {
-
+            seterror(true);
+            return;
         }
+
+        seterror(false);
+
+        try {
+            const response = await axios.post('http://localhost:4000/restaurant', {
+                plateName,
+                platePrice,
+                category
+            })
+            console.log(response)
+            if (response.status === 201) {
+                Swal.fire(
+                    'Product created!',
+                    'Product added succesfuly!',
+                    'success'
+                )
+            }
+        } catch (error) {
+            console.log(error)
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            })
+        }
+        setrechargeProducts(true);
+        history.push('/products')
     }
 
 
@@ -25,7 +57,7 @@ const AddProduct = () => {
     return (
         <div className="col-md-8 mx-auto ">
             <h1 className="text-center">Add New Product</h1>
-
+            {(error) ? <Error message='All fields is required'></Error> : null}
             <form
                 className="mt-5"
                 onSubmit={addProducts}
@@ -112,4 +144,4 @@ const AddProduct = () => {
     )
 }
 
-export default AddProduct;
+export default withRouter(AddProduct);

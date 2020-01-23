@@ -1,16 +1,40 @@
 {
-    "restaurant" : [
-        {
-            "platePrice": "200",
-            "plateName": "Cheesecake",
-            "category": "Dessert",
-            "id": 1
-        },
-        {
-            "platePrice": "500",
-            "plateName": "Rib eye 400g",
-            "category": "Sandwich",
-            "id": 2
-        }
-    ]
+  "restaurant": [
+    {
+      "plateName": "Salad",
+      "platePrice": "150",
+      "category": "ensalada",
+      "id": 3
+    },
+    {
+      "plateName": "Chicken",
+      "platePrice": "140",
+      "category": "sandwiches",
+      "id": 4
+    },
+    {
+      "plateName": "Coca-Cola",
+      "platePrice": "50",
+      "category": "bebida",
+      "id": 5
+    },
+    {
+      "plateName": "Strawberrys",
+      "platePrice": "12",
+      "category": "bebida",
+      "id": 6
+    },
+    {
+      "plateName": "Salad",
+      "platePrice": "12",
+      "category": "ensalada",
+      "id": 7
+    },
+    {
+      "plateName": "Fanta",
+      "platePrice": "5",
+      "category": "bebida",
+      "id": 8
+    }
+  ]
 }
